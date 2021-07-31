@@ -1,25 +1,17 @@
 import logo from '../../assets/svgs/logo.svg';
-import './App.css';
+import { StyledAppHeader, StyledAppLogo, StyledApp } from './AppStyles';
 
 const App = (): JSX.Element => (
-	<div className="App">
-		<header className="App-header">
-			<img src={logo} className="App-logo" alt="logo" />
+	<StyledApp className="App">
+		<StyledAppHeader className="App-header">
+			<StyledAppLogo src={logo} className="App-logo" alt="logo" />
 			<p>
 				Edit <code>src/App.tsx</code> and save to reload.
 				<br />
 				{process.env.REACT_APP_WEBSITE_NAME}
 			</p>
-			<a
-				className="App-link"
-				href="https://reactjs.org"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				Learn React
-			</a>
-		</header>
-	</div>
+		</StyledAppHeader>
+	</StyledApp>
 );
 
 export default App;
