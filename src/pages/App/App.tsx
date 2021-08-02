@@ -1,10 +1,10 @@
-import logo from '../../assets/svgs/logo.svg';
-import { StyledAppHeader, StyledAppLogo, StyledApp } from './AppStyles';
+import { StyledAppHeader, StyledApp } from './AppStyles';
+import Logo from '../../components/Logo/Logo';
 
 const App = (): JSX.Element => (
-	<StyledApp className="App">
-		<StyledAppHeader className="App-header">
-			<StyledAppLogo src={logo} className="App-logo" alt="logo" />
+	<StyledApp>
+		<StyledAppHeader>
+			<Logo animate height="20vmin" />
 			<p>
 				Edit <code>src/App.tsx</code> and save to reload.
 				<br />

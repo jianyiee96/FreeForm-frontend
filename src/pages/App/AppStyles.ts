@@ -1,24 +1,7 @@
-import styled, { keyframes } from 'styled-components';
-
-const SpinAnimation = keyframes`
-        from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-`;
+import styled from 'styled-components';
 
 export const StyledApp = styled.div`
 	text-align: center;
-`;
-
-export const StyledAppLogo = styled.img`
-	height: 40vmin;
-	pointer-events: none;
-	@media (prefers-reduced-motion: no-preference) {
-		animation: ${SpinAnimation} infinite 20s linear;
-	}
 `;
 
 export const StyledAppHeader = styled.header`
