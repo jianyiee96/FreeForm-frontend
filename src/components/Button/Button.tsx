@@ -9,6 +9,7 @@ type ButtonProps = {
 	minWidth?: string;
 	minHeight?: string;
 	textTransform?: 'uppercase' | 'lowercase' | 'capitalize' | undefined;
+	className?: string;
 };
 
 const Button = ({
@@ -18,6 +19,7 @@ const Button = ({
 	minWidth,
 	minHeight,
 	textTransform = undefined,
+	className,
 }: ButtonProps): JSX.Element => {
 	const themeContext = useContext(ThemeContext);
 	const { colors, fontColors } = themeContext;
@@ -45,6 +47,7 @@ const Button = ({
 			$minWidth={minWidth}
 			$minHeight={minHeight}
 			$textTransform={textTransform}
+			className={className}
 		>
 			{children}
 		</StyledButton>

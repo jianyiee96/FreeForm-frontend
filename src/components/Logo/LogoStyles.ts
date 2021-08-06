@@ -48,13 +48,12 @@ export const StyledAppName = styled(AppName)``;
 export const StyledLogoContainer = styled.div<{
 	animate?: boolean;
 	incname?: boolean;
-	height?: string;
 }>`
 	justify-content: center;
 	display: flex;
 	flex-direction: column;
-	${({ height }) => height && `height:${height}`};
 	${StyledAppLogo} {
+		width: 100%;
 		${({ incname }) => (incname ? `flex: 0 0 80%;` : `flex: 0 0 100%;`)}
 		${({ animate }) =>
 			animate &&

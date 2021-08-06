@@ -1,16 +1,16 @@
 import {
 	StyledAppHeader,
 	StyledApp,
+	StyledLogo,
 	StyledButtonsContainer,
 	StyledButtonContainer,
 } from './AppStyles';
 import Button from '../../components/Button/Button';
-import Logo from '../../components/Logo/Logo';
 
 const App = (): JSX.Element => (
 	<StyledApp>
 		<StyledAppHeader>
-			<Logo animate incName height="20vmin" />
+			<StyledLogo animate incName />
 			<StyledButtonsContainer>
 				<StyledButtonContainer>
 					<Button

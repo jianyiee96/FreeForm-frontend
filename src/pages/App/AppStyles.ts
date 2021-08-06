@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { device } from '../../config/display';
+import Logo from '../../components/Logo/Logo';
 
 export const StyledApp = styled.div`
 	text-align: center;
@@ -6,13 +8,21 @@ export const StyledApp = styled.div`
 
 export const StyledAppHeader = styled.header`
 	background-color: ${(props) => props.theme.colors.secondary};
-	min-height: 100vh;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	font-size: calc(10px + 2vmin);
 	color: ${(props) => props.theme.colors.main};
+`;
+
+export const StyledLogo = styled(Logo)`
+	@media ${device.mobileS} {
+		height: 40vmin;
+	}
+	@media ${device.tablet} {
+		height: 20vmin;
+	}
 `;
 
 export const StyledButtonsContainer = styled.div`

@@ -2,6 +2,9 @@ import { createGlobalStyle } from 'styled-components';
 import { ThemeType } from './styles/Theme';
 
 export const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
+  html {
+	  font-size: calc(10px + 1vmin);
+  }
   body {
     margin: 0;
     color: ${({ theme }) => theme.fontColors.secondary};

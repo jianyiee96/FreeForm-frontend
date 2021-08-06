@@ -7,16 +7,21 @@ import {
 type LogoProps = {
 	animate?: boolean;
 	incName?: boolean;
-	height: string;
+	className?: string;
 };
 
 const Logo = ({
 	animate = false,
 	incName = false,
-	height,
+	className,
 }: LogoProps): JSX.Element => {
 	return (
-		<StyledLogoContainer animate={animate} incname={incName} height={height}>
+		<StyledLogoContainer
+			animate={animate}
+			incname={incName}
+			aria-label="logo-container"
+			className={className}
+		>
 			<StyledAppLogo />
 			<StyledAppName />
 		</StyledLogoContainer>

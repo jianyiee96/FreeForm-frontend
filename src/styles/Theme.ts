@@ -14,6 +14,11 @@ const appTheme = {
 		md: '3.5rem',
 		lg: '5rem',
 	},
+	screenSize: {
+		phone: '320px',
+		tablet: '961px',
+		desktop: '1025px',
+	},
 };
 
 export type ThemeType = typeof appTheme;
