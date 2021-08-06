@@ -1,5 +1,6 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import { ReactComponent as AppLogo } from '../../assets/svgs/logo.svg';
+import { ReactComponent as AppName } from '../../assets/svgs/name.svg';
 
 const drawAnimation = keyframes`
     from {
@@ -31,27 +32,70 @@ const slideAnimation = keyframes`
   }
 `;
 
-export const StyledLogoContainer = styled.div`
-	justify-content: center;
-	display: flex;
-	flex-direction: row;
+const appearAnimation = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 `;
 
-export const StyledAppLogo = styled(AppLogo)`
-	flex: 1;
-	pointer-events: none;
-	#line {
-		opacity: 0;
-		stroke-dasharray: 100;
-		animation: ${drawAnimation} 2s linear 1 1.5s forwards;
+export const StyledAppLogo = styled(AppLogo)``;
+
+export const StyledAppName = styled(AppName)``;
+
+export const StyledLogoContainer = styled.div<{
+	animate?: boolean;
+	incname?: boolean;
+	height?: string;
+}>`
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	${({ height }) => height && `height:${height}`};
+	${StyledAppLogo} {
+		${({ incname }) => (incname ? `flex: 0 0 80%;` : `flex: 0 0 100%;`)}
+		${({ animate }) =>
+			animate &&
+			css`
+				&:hover {
+					#line {
+						stroke-dasharray: 100;
+						animation: ${drawAnimation} 2s ease-in-out infinite;
+					}
+					#pen {
+						animation: ${shakeAnimation} 1s linear infinite;
+						transform-origin: center;
+						transform-box: fill-box;
+					}
+				}
+				#line {
+					opacity: 0;
+					stroke-dasharray: 100;
+					animation: ${drawAnimation} 2s linear 1 1.5s forwards;
+				}
+				#pen {
+					opacity: 0;
+					animation: ${shakeAnimation} 1s 2 linear 1.5s forwards;
+					transform-origin: center;
+					transform-box: fill-box;
+				}
+				#page {
+					animation: ${slideAnimation} 1s ease 1;
+				}
+			`}
 	}
-	#pen {
-		opacity: 0;
-		animation: ${shakeAnimation} 1s 2 linear 1.5s forwards;
-		transform-origin: center;
-		transform-box: fill-box;
-	}
-	#page {
-		animation: ${slideAnimation} 1s ease 1;
+	${StyledAppName} {
+		flex: 0 0 20%;
+		width: 100%;
+		margin-top: 1rem;
+		${({ incname }) => (incname ? `` : `display: none;`)}
+		${({ animate }) =>
+			animate &&
+			css`
+				opacity: 0;
+				animation: ${appearAnimation} 1s ease-in 1.5s forwards;
+			`}
 	}
 `;

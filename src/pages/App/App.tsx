@@ -1,15 +1,38 @@
-import { StyledAppHeader, StyledApp } from './AppStyles';
+import {
+	StyledAppHeader,
+	StyledApp,
+	StyledButtonsContainer,
+	StyledButtonContainer,
+} from './AppStyles';
+import Button from '../../components/Button/Button';
 import Logo from '../../components/Logo/Logo';
 
 const App = (): JSX.Element => (
 	<StyledApp>
 		<StyledAppHeader>
-			<Logo animate height="20vmin" />
-			<p>
-				Edit <code>src/App.tsx</code> and save to reload.
-				<br />
-				{process.env.REACT_APP_WEBSITE_NAME}
-			</p>
+			<Logo animate incName height="20vmin" />
+			<StyledButtonsContainer>
+				<StyledButtonContainer>
+					<Button
+						variant="contained"
+						minHeight="3rem"
+						minWidth="11rem"
+						textTransform="capitalize"
+					>
+						Create
+					</Button>
+				</StyledButtonContainer>
+				<StyledButtonContainer>
+					<Button
+						variant="outlined"
+						minHeight="3rem"
+						minWidth="11rem"
+						textTransform="capitalize"
+					>
+						View
+					</Button>
+				</StyledButtonContainer>
+			</StyledButtonsContainer>
 		</StyledAppHeader>
 	</StyledApp>
 );
