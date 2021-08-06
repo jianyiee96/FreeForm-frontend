@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './indexStyles';
-import App from './pages/App/App';
 import reportWebVitals from './reportWebVitals';
 import appTheme from './styles/Theme';
+import Router from './router/Router';
 
 ReactDOM.render(
 	<React.StrictMode>
@@ -14,7 +14,7 @@ ReactDOM.render(
 		/>
 		<ThemeProvider theme={appTheme}>
 			<GlobalStyle />
-			<App />
+			<Router />
 		</ThemeProvider>
 	</React.StrictMode>,
 	document.getElementById('root')
